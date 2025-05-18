@@ -32,17 +32,9 @@ Bot.on('Message', (room, user, message) => {
     }
 
       // Comando !help
-      if (cmd === 'help' || cmd === 'cmds' || cmd === 'commands') {
-        const language = args || 'en';  //
-        const currentTime = Date.now();
-
-      else if (language === 'en') {
-          room.message(`**Available Commands:**
-          /youtube [term] - Search for videos on YouTube.
-          /img [term] - Search for images on Google.
-          /rooms - Shows the chats where the bot is.
-          /e - Ex: 2 + 2 = 4.`);
-      }
+      if (cmd === 'help') {
+      room.message(`Available Commands: /youtube [term] - Search for videos on YouTube., /img [term] - Search for images on Google., /rooms - Shows the chats where the bot is., /e - Ex: 2 + 2 = 4.`);
+    }
 
      if (cmd === 'youtube' && args) {
         yts(args, ytOpts, (err, results) => {
